@@ -19,12 +19,12 @@ class EvenOddApp extends Component {
 
     return (
       <div className="bg-container">
-        <biv className="count-container">
+        <div className="count-container">
           <h1>Count {count}</h1>
           <p>Count is {condition}</p>
           <button onClick={this.onIncrease}>Increment</button>
           <p>*Increase By Random Number Between 1 to 100</p>
-        </biv>
+        </div>
       </div>
     )
   }
