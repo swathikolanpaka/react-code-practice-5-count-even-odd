@@ -3,23 +3,25 @@
 import {Component} from 'react'
 import './index.css'
 
-class LightDarkMode extends Component {
+class EvenOddApp extends Component {
   state = {count: 0}
 
   onIncrease = () => {
-    this.setState(prevState => {
-      count: prevState.count + 1 + Math.ceil(Math.random())
-    })
+    this.setState(prevState => ({
+      count: prevState.count + 1 + Math.ceil(Math.random()),
+    }))
   }
 
   render() {
     const {count, isCreaseClicked} = this.state
 
+    const condition = count % 2 === 0 ? 'Even' : 'Odd'
+
     return (
       <div className="bg-container">
         <biv className="count-container">
           <h1>Count {count}</h1>
-          <p>Count is </p>
+          <p>Count is {condition}</p>
           <button onClick={this.onIncrease}>Increment</button>
           <p>*Increase By Random Number Between 1 to 100</p>
         </biv>
@@ -28,4 +30,4 @@ class LightDarkMode extends Component {
   }
 }
 
-export default LightDarkMode
+export default EvenOddApp
