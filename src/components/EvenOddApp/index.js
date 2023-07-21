@@ -8,7 +8,7 @@ class EvenOddApp extends Component {
 
   onIncrease = () => {
     this.setState(prevState => ({
-      count: prevState.count + 1 + Math.ceil(Math.random()),
+      count: prevState.count + Math.ceil(Math.random()),
     }))
   }
 
@@ -23,7 +23,7 @@ class EvenOddApp extends Component {
           <h1>Count {count}</h1>
           <p>Count is {condition}</p>
           <button onClick={this.onIncrease}>Increment</button>
-          <p>*Increase By Random Number Between 1 to 100</p>
+          <p>Increase By Random Number Between 0 to 100</p>
         </div>
       </div>
     )
