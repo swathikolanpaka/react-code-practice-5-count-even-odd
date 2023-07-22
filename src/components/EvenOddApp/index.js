@@ -7,9 +7,18 @@ class EvenOddApp extends Component {
   state = {count: 0}
 
   onIncrease = () => {
+    const randomNum = Math.ceil(Math.random() * 100)
     this.setState(prevState => ({
-      count: prevState.count + Math.ceil(Math.random()),
+      count: prevState.count + randomNum,
     }))
+  }
+
+  countValue = () => {
+    const {count} = this.state
+    if (count > 100) {
+      return <h1>Count 0</h1>
+    }
+    return <h1>Count {count}</h1>
   }
 
   render() {
@@ -20,7 +29,7 @@ class EvenOddApp extends Component {
     return (
       <div className="bg-container">
         <div className="count-container">
-          <h1>Count {count}</h1>
+          {this.countValue()}
           <p>Count is {condition}</p>
           <button onClick={this.onIncrease}>Increment</button>
           <p>Increase By Random Number Between 0 to 100</p>
